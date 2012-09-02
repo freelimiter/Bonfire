@@ -323,6 +323,8 @@ class Settings extends Admin_Controller
 
 			if ($email)
 			{
+				Template::set('header', $this->load->view('emailer/email/_header', null, TRUE));
+				Template::set('footer', $this->load->view('emailer/email/_footer', null, TRUE));
 				Template::set('email', $email);
 
 				Template::render('blank');
