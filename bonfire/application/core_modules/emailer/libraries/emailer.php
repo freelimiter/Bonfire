@@ -217,6 +217,7 @@ class Emailer
 		$this->ci->load->model('settings/settings_model', 'settings_model');
 		$this->ci->email->initialize($this->ci->settings_model->select('name,value')->find_all_by('module', 'email'));
 
+		$this->ci->email->set_mailtype('html');
 		$this->ci->email->set_newline("\r\n");
 		$this->ci->email->to($to);
 		$this->ci->email->from($from, settings_item('site.title'));
@@ -300,6 +301,7 @@ class Emailer
 			$this->ci->email->subject($email->subject);
 			$this->ci->email->message($email->message);
 			$this->ci->email->set_newline("\r\n");
+			$this->ci->email->set_mailtype('html');
 
 			if ($email->alt_message)
 			{
