@@ -23,6 +23,11 @@ a.mb_show_advanced_rules:hover {
 .mb_advanced {
 	display: none;
 }
+
+.current {
+	color: #F00;
+	font-weight: bold;
+}
 </style>
 
 <p class="intro"><?php e(lang('mb_create_note')) ?></p>
